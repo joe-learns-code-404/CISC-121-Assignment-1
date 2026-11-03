@@ -1,7 +1,10 @@
-# import math library
+# import math library to use math.ceil()
 import math
 
 def solution(X, Y, D):
-    # Y divided by D will show how many jumps are required of the frog to complete its path
-    jumps = math.ceil(Y / D) # round up decimal to nearest whole number
-    return jumps
+    # check that you won't divide by 0
+    if X == Y or D == 0:
+        return 0
+    else:
+        distance = Y - X # get distance left to travel
+        return math.ceil(distance / D) # round UP to nearest positve integer
