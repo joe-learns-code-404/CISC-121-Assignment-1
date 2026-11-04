@@ -19,6 +19,6 @@ def solution(A):
             else:
                 if A[0] == 1:
                     C = A[len(A) - 1] + 1
-                else:
-                    C = 1
+                elif len(A) == 2:
+                    C = A[0] - 1
     return C
