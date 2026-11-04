@@ -13,10 +13,10 @@ def solution(A):
     elif len(A) == 0:
         C = 1
     else:
-        for x in range(len(A)):
-            #print(A[x])
+        for x in range(1, len(A)):
             if A[x] != A[x - 1] + 1:
                 C = A[x] - 1
+                break
             else:
                 if A[0] == 1:
                     C = A[len(A) - 1] + 1
