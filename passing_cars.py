@@ -3,14 +3,10 @@
 
 def solution(A):
     # Implement your solution here
-    zeros = []
-    ones = []
+    count = 0
     for x in range(len(A)):
         if A[x] == 0:
-            zeros.append(A[x])
-        else:
-            ones.append(A[x])
-    if len(zeros) == 0 or len(ones) == 0:
-        return 0
-    else:
-        return len(zeros) + len(ones)
+            for y in range(x, len(A)):
+                if A[y] == 1:
+                    count += 1
+    return count
