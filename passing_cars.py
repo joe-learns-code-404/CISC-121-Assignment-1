@@ -3,12 +3,14 @@
 
 def solution(A):
     # Implement your solution here
-    count = 0
+    zeros = []
+    ones = []
     for x in range(len(A)):
         if A[x] == 0:
-            for y in range(x, len(A)):
-                if A[y] == 1:
-                    count += 1
-    if count >= 1000000000:
-        return -1
-    return count
+            zeros.append(A[x])
+        else:
+            ones.append(A[x])
+    if len(zeros) == 0 or len(ones) == 0:
+        return 0
+    else:
+        return len(zeros) + len(ones)
